@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glow & Style - Luxury Salon & Spa</title>
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">GLOW & STYLE <span>Salon & Spa</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="stylists.html">Stylists</a></li>
+                <li><a href="booking.html">Book Appointment</a></li>
+            </ul>
+            <div id="nav-auth-container">
+                <!-- Loaded dynamically by JS -->
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-subtitle">Welcome to Luxury</span>
+            <h1>Redefine Your <span>Style</span> & Rejuvenate Your <span>Soul</span></h1>
+            <p class="hero-description">Experience premium hair styling, body treatments, and organic spa treatments tailored uniquely for you by our master stylists.</p>
+            <div class="hero-buttons">
+                <button class="btn-primary" onclick="window.location.href='booking.html'">Book Appointment <i class="bi bi-calendar-check"></i></button>
+                <button class="btn-secondary" onclick="window.location.href='services.html'">Explore Services</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Services Section -->
+    <section class="section">
+        <div class="section-header">
+            <span class="section-subtitle">Our Specialities</span>
+            <h2 class="section-title">Featured Services</h2>
+        </div>
+        <div class="featured-grid" id="featured-services-grid">
+            <!-- Services loaded dynamically by JS -->
+            <div style="grid-column: 1/-1; text-align:center; color:var(--text-muted);">Loading our finest services...</div>
+        </div>
+    </section>
+
+    <!-- Stylists Section -->
+    <section class="section" style="background: var(--bg-secondary); border-top: 1px solid var(--border-glass); border-bottom: 1px solid var(--border-glass); padding: 5rem 2rem; max-width: 100%;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div class="section-header">
+                <span class="section-subtitle">Meet Our Staff</span>
+                <h2 class="section-title">Popular Stylists</h2>
+            </div>
+            <div class="featured-grid" id="popular-stylists-grid">
+                <!-- Stylists loaded dynamically by JS -->
+                <div style="grid-column: 1/-1; text-align:center; color:var(--text-muted);">Loading our expert stylists...</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>GLOW & STYLE</h3>
+                <p>Premium salon and wellness spa. Delivering high-quality styling, grooming, and luxury massage treatments since 2018.</p>
+                <p style="margin-top: 1rem; color:var(--primary);"><i class="bi bi-geo-alt"></i> 4th Block, Koramangala, Bengaluru</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul class="footer-links" style="margin-top: 1rem;">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="stylists.html">Stylists</a></li>
+                    <li><a href="booking.html">Booking</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Categories</h4>
+                <ul class="footer-links" style="margin-top: 1rem;">
+                    <li><a href="services.html">Hair Cut</a></li>
+                    <li><a href="services.html">Hair Spa</a></li>
+                    <li><a href="services.html">Massage</a></li>
+                    <li><a href="services.html">Facial</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p style="margin-top: 1rem;"><i class="bi bi-telephone"></i> +91 99887 76655</p>
+                <p><i class="bi bi-envelope"></i> info@glowandstyle.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Glow & Style Salon & Spa. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

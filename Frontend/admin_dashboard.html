@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Management Dashboard - Glow & Style</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">GLOW & STYLE <span>Administration</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="stylists.html">Stylists</a></li>
+            </ul>
+            <div id="nav-auth-container"></div>
+        </nav>
+    </header>
+
+    <main class="section" style="max-width: 1350px;">
+        <div class="section-header" style="text-align: left; margin-bottom: 2rem;">
+            <h1 class="section-title">Admin Management Panel</h1>
+            <p style="color:var(--text-muted)">Salon & Spa Operations Control Center</p>
+        </div>
+
+        <!-- Analytical Statistics -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon"><i class="bi bi-people"></i></div>
+                <div class="stat-info">
+                    <h4>Clients</h4>
+                    <p id="stat-total-clients">0</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="bi bi-tags"></i></div>
+                <div class="stat-info">
+                    <h4>Services</h4>
+                    <p id="stat-total-services">0</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="bi bi-scissors"></i></div>
+                <div class="stat-info">
+                    <h4>Stylists</h4>
+                    <p id="stat-total-stylists">0</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="bi bi-calendar-event"></i></div>
+                <div class="stat-info">
+                    <h4>Bookings</h4>
+                    <p id="stat-total-bookings">0</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Core Dashboard Layout -->
+        <div class="dashboard-layout">
+            
+            <!-- Sidebar Panel -->
+            <div class="sidebar">
+                <ul class="sidebar-menu">
+                    <li class="sidebar-link active" data-section="customers"><i class="bi bi-people"></i> Clients List</li>
+                    <li class="sidebar-link" data-section="services"><i class="bi bi-tags"></i> Services Catalog</li>
+                    <li class="sidebar-link" data-section="stylists"><i class="bi bi-scissors"></i> Stylists Roster</li>
+                    <li class="sidebar-link" data-section="appointments"><i class="bi bi-calendar-check"></i> Appointments</li>
+                    <li class="sidebar-link" data-section="payments"><i class="bi bi-currency-rupee"></i> Transactions</li>
+                </ul>
+            </div>
+
+            <!-- Sections Container -->
+            <div>
+                
+                <!-- CUSTOMERS SECTION -->
+                <div class="admin-section" id="admin-sec-customers">
+                    <div class="glass-card" style="padding: 1.5rem;">
+                        <h3 style="font-family:var(--font-serif); margin-bottom: 1rem; color:var(--primary);">Registered Customers</h3>
+                        <div class="table-responsive">
+                            <table class="custom-table">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Full Name</th>
+                                        <th>Email</th>
+                                        <th>Phone</th>
+                                        <th>Gender</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="admin-customers-tbody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SERVICES SECTION -->
+                <div class="admin-section" id="admin-sec-services" style="display:none;">
+                    <div class="glass-card" style="padding: 1.5rem;">
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 1.2rem;">
+                            <h3 style="font-family:var(--font-serif); color:var(--primary); margin:0;">Services List</h3>
+                            <button class="btn-primary" onclick="openAddServiceModal()"><i class="bi bi-plus-circle"></i> Add Service</button>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="custom-table">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Service Name</th>
+                                        <th>Category</th>
+                                        <th>Duration</th>
+                                        <th>Price</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="admin-services-tbody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STYLISTS SECTION -->
+                <div class="admin-section" id="admin-sec-stylists" style="display:none;">
+                    <div class="glass-card" style="padding: 1.5rem;">
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 1.2rem;">
+                            <h3 style="font-family:var(--font-serif); color:var(--primary); margin:0;">Stylists & Therapists</h3>
+                            <button class="btn-primary" onclick="openAddStylistModal()"><i class="bi bi-plus-circle"></i> Add Stylist</button>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="custom-table">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Stylist Name</th>
+                                        <th>Specialty</th>
+                                        <th>Experience</th>
+                                        <th>Phone</th>
+                                        <th>Availability</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="admin-stylists-tbody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- APPOINTMENTS SECTION -->
+                <div class="admin-section" id="admin-sec-appointments" style="display:none;">
+                    <div class="glass-card" style="padding: 1.5rem;">
+                        <h3 style="font-family:var(--font-serif); margin-bottom: 1rem; color:var(--primary);">Customer Appointments</h3>
+                        <div class="table-responsive">
+                            <table class="custom-table">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Customer</th>
+                                        <th>Service</th>
+                                        <th>Stylist</th>
+                                        <th>Schedule</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="admin-appointments-tbody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TRANSACTIONS SECTION -->
+                <div class="admin-section" id="admin-sec-payments" style="display:none;">
+                    <div class="glass-card" style="padding: 1.5rem;">
+                        <h3 style="font-family:var(--font-serif); margin-bottom: 1rem; color:var(--primary);">Transactions History</h3>
+                        <div class="table-responsive">
+                            <table class="custom-table">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Customer</th>
+                                        <th>Booking ID</th>
+                                        <th>Amount</th>
+                                        <th>Method</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="admin-payments-tbody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <div style="margin-top: 5rem; text-align: center; color:var(--text-muted); font-size:0.85rem; padding: 2rem 0; border-top: 1px solid rgba(255,255,255,0.05);">
+        &copy; 2026 Glow & Style Administration Panel. All rights reserved.
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

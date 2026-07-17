@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salon & Spa Services - Glow & Style</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">GLOW & STYLE <span>Salon & Spa</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
+                <li><a href="stylists.html">Stylists</a></li>
+                <li><a href="booking.html">Book Appointment</a></li>
+            </ul>
+            <div id="nav-auth-container"></div>
+        </nav>
+    </header>
+
+    <main class="section">
+        <div class="section-header">
+            <span class="section-subtitle">Grooming & Wellness Menu</span>
+            <h1 class="section-title">Our Services</h1>
+        </div>
+
+        <!-- Filter & Search Panel -->
+        <div class="filter-panel">
+            <div class="search-box">
+                <i class="bi bi-search"></i>
+                <input type="text" class="form-control" id="service-search" placeholder="Search services (e.g. Hair Spa, Massage)...">
+            </div>
+            <div class="category-tags">
+                <button class="tag-btn active" data-category="All">All</button>
+                <button class="tag-btn" data-category="Hair Cut">Hair Cut</button>
+                <button class="tag-btn" data-category="Hair Styling">Hair Styling</button>
+                <button class="tag-btn" data-category="Hair Coloring">Hair Coloring</button>
+                <button class="tag-btn" data-category="Facial">Facial</button>
+                <button class="tag-btn" data-category="Spa">Spa</button>
+                <button class="tag-btn" data-category="Massage">Massage</button>
+                <button class="tag-btn" data-category="Manicure">Manicure</button>
+                <button class="tag-btn" data-category="Pedicure">Pedicure</button>
+            </div>
+        </div>
+
+        <!-- Services Grid -->
+        <div class="services-grid" id="services-list-grid">
+            <div style="grid-column: 1/-1; text-align:center; padding:3rem; color:var(--text-muted);">Loading our services catalogue...</div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-bottom" style="margin-top: 5rem;">
+            <p>&copy; 2026 Glow & Style Salon & Spa. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

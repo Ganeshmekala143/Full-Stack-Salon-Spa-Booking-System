@@ -1,0 +1,5 @@
+django
+pymongo
+dnspython
+django-cors-headers
+python-dotenv
